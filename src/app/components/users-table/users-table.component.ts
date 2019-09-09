@@ -24,6 +24,10 @@ export class UsersTableComponent implements OnInit {
   customersList: UserData[] = []
 
   constructor(private customersServive: CustomersService) { }
+
+  getUserToEdit(user: UserData){
+    this.customersServive.setCustomer(user)
+  }
   
   ngOnInit() {
     this.customersServive.getCustomersList()
