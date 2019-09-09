@@ -4,14 +4,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table'
 
-import { MatPaginatorModule } from '@angular/material';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatPaginatorModule } from '@angular/material';
+import {MatSortModule} from '@angular/material/sort';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { UsersTableComponent } from './components/users-table/users-table.component';
 
+const matModules = [
+    MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSortModule
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +29,7 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatFormFieldModule,
-    MatInputModule
-
+    [...matModules]
   ],
   providers: [],
   bootstrap: [AppComponent]

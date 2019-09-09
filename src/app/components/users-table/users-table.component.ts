@@ -23,22 +23,18 @@ export class UsersTableComponent implements OnInit {
 
   customersList: UserData[] = []
 
-  constructor(private customersServive: CustomersService) { 
+  constructor(private customersServive: CustomersService) { }
+  
+  ngOnInit() {
     this.customersServive.getCustomersList()
     .subscribe( (res: any) => {
       this.customersList = res
       this.dataSource = new MatTableDataSource(this.customersList);
-      console.log(res)
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;  
+      console.log(this.dataSource)
     })
 
-  
-  console.log(this.dataSource)
-  }
-
-  ngOnInit() {
-
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;  
   }
 
   applyFilter(filterValue: string) {
