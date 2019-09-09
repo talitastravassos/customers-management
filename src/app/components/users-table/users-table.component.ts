@@ -15,7 +15,7 @@ export interface UserData {
   styleUrls: ['./users-table.component.sass']
 })
 export class UsersTableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'city', 'age'];
+  displayedColumns: string[] = ['id', 'name', 'city', 'age', 'action'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
