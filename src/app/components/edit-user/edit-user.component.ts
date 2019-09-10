@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CustomersService } from 'src/app/services/customers.service';
+import { CustomersService } from 'src/app/services/customers/customers.service';
+import { NotificationsService } from 'src/app/services/notifications/notifications.service';
 
 @Component({
   selector: 'edit-user',
@@ -18,7 +19,8 @@ export class EditUserComponent implements OnInit {
     private activateRoute: ActivatedRoute,
     private route: Router,
     private customersServive: CustomersService,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private notification: NotificationsService) { }
 
   getUser(){
     this.userToEdit = this.customersServive.getCustomer()
@@ -28,7 +30,8 @@ export class EditUserComponent implements OnInit {
   submit(user){
     this.customersServive.putCustomer(this.id, user)
       .subscribe( res => {
-        console.log(res)
+        // console.log(res)
+        this.notification.successNotification(`Cliente ${user.name} atualizado com sucesso!`, "Sucesso!")
         this.route.navigate(['/'])
       })
   }

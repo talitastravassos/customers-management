@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 import { 
   MatTableModule,
@@ -47,6 +48,7 @@ const matModules = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
+    ToastrModule.forRoot(),
     [...matModules]
   ],
   providers: [],

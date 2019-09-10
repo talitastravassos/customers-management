@@ -18,17 +18,16 @@ export class CustomersService {
   }
 
   //put customers
-  putCustomer(id, user){
+  putCustomer(id, user) {
     return this.http.put(`${this.url}/${id}`, user)
   }
 
-  setCustomer(user){
+  setCustomer(user) {
     localStorage.setItem("userToEdit", JSON.stringify(user))
   }
 
-  getCustomer(){
+  getCustomer() {
     return JSON.parse(localStorage.getItem("userToEdit"))
   }
-
 
 }

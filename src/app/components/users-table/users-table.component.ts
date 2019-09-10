@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { CustomersService } from 'src/app/services/customers.service';
+import { CustomersService } from 'src/app/services/customers/customers.service';
 export interface UserData {
   id: number;
   name: string;
