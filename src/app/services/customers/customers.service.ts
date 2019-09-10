@@ -1,3 +1,4 @@
+import { User } from 'src/app/models/user.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -18,11 +19,11 @@ export class CustomersService {
   }
 
   //put customers
-  putCustomer(id, user) {
+  putCustomer(id: string, user: User) {
     return this.http.put(`${this.url}/${id}`, user)
   }
 
-  setCustomer(user) {
+  setCustomer(user: User) {
     localStorage.setItem("userToEdit", JSON.stringify(user))
   }
 

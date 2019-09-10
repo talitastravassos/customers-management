@@ -3,12 +3,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { CustomersService } from 'src/app/services/customers/customers.service';
-export interface UserData {
-  id: number;
-  name: string;
-  city: string;
-  age: string;
-}
+import { User } from 'src/app/models/user.model';
 @Component({
   selector: 'users-table',
   templateUrl: './users-table.component.html',
@@ -16,16 +11,16 @@ export interface UserData {
 })
 export class UsersTableComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'city', 'age', 'action'];
-  dataSource: MatTableDataSource<UserData>;
+  dataSource: MatTableDataSource<User>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  customersList: UserData[] = []
+  customersList: User[] = []
 
   constructor(private customersServive: CustomersService) { }
 
-  getUserToEdit(user: UserData){
+  getUserToEdit(user: User){
     this.customersServive.setCustomer(user)
   }
   

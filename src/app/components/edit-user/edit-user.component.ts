@@ -1,3 +1,4 @@
+import { User } from 'src/app/models/user.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -12,7 +13,7 @@ import { NotificationsService } from 'src/app/services/notifications/notificatio
 export class EditUserComponent implements OnInit {
 
   id: string
-  userToEdit: any
+  userToEdit: User
   editForm: FormGroup
 
   constructor(
@@ -27,7 +28,7 @@ export class EditUserComponent implements OnInit {
     console.log(this.userToEdit)
   }
   
-  submit(user){
+  submit(user: User){
     this.customersServive.putCustomer(this.id, user)
       .subscribe( res => {
         // console.log(res)
