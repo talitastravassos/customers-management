@@ -17,6 +17,11 @@ export class CustomersService {
     return this.http.get(this.url)
   }
 
+  //put customers
+  putCustomer(id, user){
+    return this.http.put(`${this.url}/${id}`, user)
+  }
+
   setCustomer(user){
     localStorage.setItem("userToEdit", JSON.stringify(user))
   }

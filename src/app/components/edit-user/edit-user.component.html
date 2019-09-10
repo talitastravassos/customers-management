@@ -1,23 +1,23 @@
-<div class="container">
+<form [formGroup]="editForm" class="container">
     <h2 class="ui header">ID: {{id}}</h2>
     <mat-form-field>
-        <input matInput placeholder="Nome">
+        <input matInput placeholder="Nome" formControlName="name">
     </mat-form-field>
     <mat-form-field>
-        <input matInput placeholder="Cidade">
+        <input matInput placeholder="Cidade" formControlName="city">
     </mat-form-field>
     <mat-form-field>
-        <input matInput placeholder="Idade">
+        <input matInput placeholder="Idade" formControlName="age">
     </mat-form-field>
 
     <div class="button-row">
-        <button mat-raised-button color="primary">
-            Salvar 
+        <button mat-raised-button color="primary" (click)="submit(editForm.value)">
+            Salvar
             <mat-icon>save</mat-icon>
         </button>
-        <button mat-raised-button color="warn">
+        <button mat-raised-button color="warn" routerLink="/">
             Cancelar
             <mat-icon>cancel</mat-icon>
         </button>
     </div>
-</div>
+</form>
