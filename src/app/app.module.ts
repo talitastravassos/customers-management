@@ -13,7 +13,8 @@ import {
   MatButtonModule, 
   MatIconModule, 
   MatSortModule, 
-  MatToolbarModule} from '@angular/material';
+  MatToolbarModule,
+  MatCardModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ const matModules = [
     MatSortModule,
     MatButtonModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
 ];
 @NgModule({
   declarations: [
