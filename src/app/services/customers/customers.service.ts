@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomersService {
 
-  private url = "http://private-92a969-processoseletivo1.apiary-mock.com/customers"
+  private url = "https://private-92a969-processoseletivo1.apiary-mock.com/customers"
 
   constructor(private http: HttpClient) { }
 
