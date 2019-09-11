@@ -2,16 +2,25 @@
     <h2 class="display-5">ID: {{ id }}</h2>
     <mat-form-field>
         <input matInput placeholder="Nome" formControlName="name">
+        <mat-error *ngIf="name.invalid && name.touched">
+            Nome é obrigatorio.
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Cidade" formControlName="city">
+        <mat-error *ngIf="city.invalid && city.touched">
+            Cidade é obrigatorio.
+        </mat-error>
     </mat-form-field>
     <mat-form-field>
         <input matInput placeholder="Idade" formControlName="age">
+        <mat-error *ngIf="age.invalid && age.touched">
+            Idade invalida, por favor digite uma idade entre 16 e 99 anos.
+        </mat-error>
     </mat-form-field>
 
     <div class="button-row">
-        <button mat-raised-button color="primary" (click)="submit(editForm.value)">
+        <button mat-raised-button color="primary" (click)="submit(editForm.value)" [disabled]="!editForm.valid">
             Salvar
             <mat-icon>save</mat-icon>
         </button>

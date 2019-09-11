@@ -23,6 +23,8 @@ export class CustomersService {
     return this.http.put(`${this.url}/${id}`, user)
   }
 
+
+  /* localStorage actions */
   setCustomer(user: User) {
     localStorage.setItem("userToEdit", JSON.stringify(user))
   }
